@@ -48,7 +48,9 @@ export default function Course() {
             }
           </Grid.Col>
           <Grid.Col span={4}>
-            <Button>Generate Lesson</Button>
+            <NavLink to="/lessons">
+              <Button>Generate Lesson</Button>
+            </NavLink>
           </Grid.Col>
         </Grid>
       </Container>
