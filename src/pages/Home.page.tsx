@@ -60,15 +60,15 @@ export function HomePage() {
           {mockData.map((item, index) => {
             return (
               <Paper w="400" h="100" shadow="xs" bg={index % 2 == 0 ? theme.colors.primary[8] : theme.colors.secondary[4]}>
-              <NavLink to={`/courses/${item.title.replace(/\s/g, '')}`}>
-                <UnstyledButton>
-                  <Flex w="400" h="100" align={"center"} p="md">
-                    <Stack gap={0} c={index % 2 == 0 ? 'white' : 'black'}>
-                      <Title order={3}>{item.title}</Title>
-                      <Text>{item.time}</Text>
-                    </Stack>
-                  </Flex>
-                </UnstyledButton>
+                <NavLink to={`/courses/${item.title.replace(/\s/g, '')}`}>
+                  <UnstyledButton>
+                    <Flex w="400" h="100" align={"center"} p="md">
+                      <Stack gap={0} c={index % 2 == 0 ? 'white' : 'black'}>
+                        <Title order={3}>{item.title}</Title>
+                        <Text>{item.time}</Text>
+                      </Stack>
+                    </Flex>
+                  </UnstyledButton>
                 </NavLink>
               </Paper>
               
@@ -81,13 +81,11 @@ export function HomePage() {
           <Paper w="50%" shadow="xs" bg={'#D9D9D9'}>
             <Group h="50" p="xs" justify="space-between" align="center">
               <Title order={4}>Calculus - Derivatives</Title>
-              <FaArrowRight/>
             </Group>
           </Paper>
           <Paper w="50%" shadow="xs" bg={'#D9D9D9'}>
             <Group  h="50" p="xs" justify="space-between" align="center">
               <Title order={4}>Art - Shapes and Boxes</Title>
-              <FaArrowRight/>
             </Group>
           </Paper>
         </Stack>

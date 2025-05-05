@@ -48,9 +48,14 @@ export default function Course() {
             }
           </Grid.Col>
           <Grid.Col span={4}>
-            <NavLink to="/lessons">
-              <Button>Generate Lesson</Button>
-            </NavLink>
+            <Stack align="stretch" p="md">
+              <NavLink to="/lessons" style={{ textDecoration: 'none' }} >
+                <Button fullWidth>Create Lesson</Button>
+              </NavLink>
+              <NavLink to="/browse" style={{ textDecoration: 'none' }} >
+                <Button fullWidth>Browse Templates</Button>
+              </NavLink>
+            </Stack>
           </Grid.Col>
         </Grid>
       </Container>
