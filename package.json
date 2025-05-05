@@ -20,10 +20,19 @@
     "storybook:build": "storybook build"
   },
   "dependencies": {
-    "@mantine/core": "7.17.4",
-    "@mantine/hooks": "7.17.4",
+    "@mantine/core": "^7.17.4",
+    "@mantine/dates": "^7.17.4",
+    "@mantine/hooks": "^7.17.4",
+    "@mantine/tiptap": "^7.17.4",
+    "@tiptap/extension-highlight": "^2.11.7",
+    "@tiptap/extension-link": "^2.11.7",
+    "@tiptap/extension-underline": "^2.11.7",
+    "@tiptap/pm": "^2.11.7",
+    "@tiptap/react": "^2.11.7",
+    "@tiptap/starter-kit": "^2.11.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.4.0"
   },
   "devDependencies": {
