@@ -12,6 +12,8 @@ import Course from './pages/Course.page';
 import EditPlan from './pages/EditLesson.page';
 import Shared from './pages/Shared.page';
 import SharedPlan from './pages/SharedPlan.page';
+import Archive from './pages/Archive.page';
+import ViewPlan from './pages/ViewLesson.page';
 
 
 const router = createBrowserRouter([
@@ -23,10 +25,11 @@ const router = createBrowserRouter([
       { path: 'lessons', element: <CreateLesson/> },
       { path: 'lessons/edit', element: <EditPlan/> },
       { path: 'lessons/shared', element: <SharedPlan/> },
+      { path: 'lessons/view', element: <ViewPlan/> },
       { path: 'browse', element: <Browse/> },
       { path: 'courses/:id', element: <Course /> },
       { path: 'shared', element: <Shared/> },
-      { path: 'archive', element: <h1>Contact</h1> },
+      { path: 'archive', element: <Archive/> },
     ],
   },
 ]);
