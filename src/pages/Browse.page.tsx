@@ -1,4 +1,4 @@
-import { Input, Title, Container, CloseButton, Button, Image, Group, Card, Text, Badge, Modal, ModalTitle } from "@mantine/core"
+import { Input, Title, Container, CloseButton, Button, Image, Group, Card, Text, Badge, Modal, ModalTitle, Dialog, Alert } from "@mantine/core"
 import { useDisclosure } from "@mantine/hooks";
 import { useState } from "react";
 
@@ -40,11 +40,18 @@ const apBioCard = {
 export default function Browse() {
   const [value, setValue] = useState('');
   const [opened, {close, toggle}] = useDisclosure()
+  const [openDialog, handleDialog] = useDisclosure()
   const [item, setItem] = useState<Item>()
 
   const handleModal = (item: Item) => {
     setItem(item)
     toggle()
+  }
+
+  const handleImport = () => {
+    toggle()
+    handleDialog.toggle()
+    setTimeout(() => handleDialog.close(), 3000)
   }
 
   return (
@@ -124,20 +131,20 @@ export default function Browse() {
         }
       </Group>
 
-      {
+      <Modal opened={opened} onClose={close} title={item?.title}>
+        <Text size="sm" fw={700}>Content</Text>
+        <Text size="sm">
+          {item?.desc}
+        </Text>
+        <Button color="blue" fullWidth mt="md" radius="md" onClick={handleImport}>
+          Import Lesson
+        </Button>
+      </Modal>
 
-        <Modal opened={opened} onClose={close} title={item?.title}>
-          <Text size="sm" fw={700}>Content</Text>
-          <Text size="sm">
-            {item?.desc}
-          </Text>
-
-          <Button color="blue" fullWidth mt="md" radius="md">
-            Import Lesson
-          </Button>
-
-        </Modal>
-      }
+      <Dialog opened={openDialog} bg={"red"}>
+        <Alert color="red" variant="filled">Not Implemented</Alert>
+      </Dialog>
+      
     </>
   )
 }

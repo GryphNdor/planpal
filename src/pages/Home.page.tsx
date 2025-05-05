@@ -1,4 +1,4 @@
-import { SimpleGrid, Title, Container, Paper, useMantineTheme, Stack, Text, Flex, Group, Card, Image, Badge, Button, UnstyledButton, Modal } from "@mantine/core";
+import { SimpleGrid, Title, Container, Paper, useMantineTheme, Stack, Text, Flex, Group, Card, Image, Badge, Button, UnstyledButton, Modal, Dialog, Alert } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import { FaArrowRight } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
@@ -36,6 +36,7 @@ export function HomePage() {
 
   const theme = useMantineTheme()
   const [opened, {close, toggle}] = useDisclosure()
+  const [openDialog, handleDialog] = useDisclosure()
   const [item, setItem] = useState<Item>()
 
   const mockData = [
@@ -49,6 +50,12 @@ export function HomePage() {
   const handleModal = (item: Item) => {
     setItem(item)
     toggle()
+  }
+
+  const handleImport = () => {
+    toggle()
+    handleDialog.toggle()
+    setTimeout(() => handleDialog.close(), 3000)
   }
 
   return (
@@ -126,11 +133,15 @@ export function HomePage() {
           <Text size="sm">
             {item?.desc}
           </Text>
-          <Button color="blue" fullWidth mt="md" radius="md">
+          <Button color="blue" fullWidth mt="md" radius="md" onClick={handleImport}>
             Import Lesson
           </Button>
         </Modal>
       </Container>
+
+      <Dialog opened={openDialog} bg={"red"}>
+        <Alert color="red" variant="filled">Not Implemented</Alert>
+      </Dialog>
     </>
   );
 }
